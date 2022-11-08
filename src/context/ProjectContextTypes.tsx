@@ -4,8 +4,8 @@ export type ProjectDataTypes = {
     status: string
 }
 export type ProjectsTypes = {
-    projectsData: ProjectDataTypes[]
-    setProjectsData: React.Dispatch<React.SetStateAction<ProjectDataTypes[]>>
+    projectsData: ProjectDataTypes[] | null
+    setProjectsData: React.Dispatch<React.SetStateAction<ProjectDataTypes[] | null>>
 }
 export type ProjectsDataChildren = {
     children: React.ReactNode
