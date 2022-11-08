@@ -1,8 +1,10 @@
+// Material UI 
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { IconButton, FormControl } from '@mui/material';
+
 const SearchProjectsForm = () => {
     return (
         <Box>
