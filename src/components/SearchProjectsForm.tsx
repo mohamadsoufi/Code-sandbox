@@ -18,7 +18,17 @@ const SearchProjectsForm = () => {
     const [inputValue, setInputValue] = useState<string>("")
     const [searchIconNotEnabled, setSearchIconNotEnabled] = useState<boolean>(true)
 
+    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value)
+        if (inputValue.length >= 3) {
+            projectsDataBackend?.map(project => {
+                const { projectName } = project
+                if (projectName?.startsWith(inputValue)) {
+                }
+            })
+        }
 
+    }
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault()
 
@@ -43,7 +53,7 @@ const SearchProjectsForm = () => {
                     id="input-with-icon-textfield"
                     label="TextField"
                     value={ inputValue }
-
+                    onChange={ handleInputValue }
                     InputProps={ {
                         endAdornment: (
                             <InputAdornment position="start">
