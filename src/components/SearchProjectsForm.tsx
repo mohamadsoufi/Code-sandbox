@@ -1,6 +1,6 @@
 // React stuff 
 import { useNavigate } from 'react-router-dom';
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 // Material UI 
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
@@ -9,40 +9,52 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { IconButton } from '@mui/material';
 // Project Data 
 import projectsDataBackend from "../assets/projectsData.json"
+import { ProjectContext } from '../context/ProjectContext';
 // Context 
 
 
 const SearchProjectsForm = () => {
+    const projectContext = useContext(ProjectContext);
+    const { projectsData, setProjectsData } = projectContext
 
     const navigate = useNavigate()
+
     const [inputValue, setInputValue] = useState<string>("")
     const [searchIconNotEnabled, setSearchIconNotEnabled] = useState<boolean>(true)
 
     const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value)
-        if (inputValue.length >= 3) {
-            projectsDataBackend?.map(project => {
-                const { projectName } = project
-                if (projectName?.startsWith(inputValue)) {
-                }
-            })
-        }
-
     }
+
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault()
+    }
 
+    useEffect(() => {
         if (inputValue.length >= 3) {
-            projectsDataBackend?.map(project => {
+            const data: any = projectsDataBackend?.filter(project => {
                 const { projectName } = project
                 if (projectName?.startsWith(inputValue)) {
-                    console.log(project);
+                    return project
                 }
+                return null
             })
+            return setProjectsData(data)
         }
+        return setProjectsData(null)
+    }, [inputValue, setProjectsData])
 
 
-    }
+
+    useEffect(() => {
+        if (projectsData) {
+            console.log(projectsData);
+
+            return setSearchIconNotEnabled(false)
+        }
+        return setSearchIconNotEnabled(true)
+    }, [projectsData])
+
     return (
         <Box>
             <Box
