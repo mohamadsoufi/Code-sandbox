@@ -2,6 +2,7 @@ export type ProjectDataTypes = {
     projectName: string
     description: string
     status: string
+    id: string
 }
 export type ProjectsTypes = {
     projectsData: ProjectDataTypes[] | null

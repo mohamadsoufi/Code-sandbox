@@ -7,6 +7,7 @@ export type AreThereProjectsLogic = {
 }
 
 export const areThereProjectsLogic = ({ inputValue, projectsDataBackend, setProjectsData }: AreThereProjectsLogic) => {
+    console.log(projectsDataBackend);
 
     if (inputValue.length >= 3) {
         const data: ProjectDataTypes[] | null = projectsDataBackend?.filter(project => {
@@ -19,4 +20,6 @@ export const areThereProjectsLogic = ({ inputValue, projectsDataBackend, setProj
         return setProjectsData(data)
     }
     return setProjectsData(null)
+    // }
 }
+// export const kalb = "ameer"

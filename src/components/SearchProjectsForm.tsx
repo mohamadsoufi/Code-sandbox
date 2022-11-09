@@ -29,12 +29,12 @@ const SearchProjectsForm = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault()
-        projectsData?.length !== 0 ? navigate("/projects-list") : alert("Sorry there is no match")
+        projectsData?.length !== 0 ? navigate("/projects") : alert("Sorry there is no match")
     }
 
     useEffect(() => {
         // This function handles wether we have a match from the projects after the user enters 3 letters 
-        areThereProjectsLogic({ inputValue, projectsDataBackend, setProjectsData })
+        areThereProjectsLogic({ inputValue, setProjectsData, projectsDataBackend })
     }, [inputValue, setProjectsData])
 
     useEffect(() => {
