@@ -18,11 +18,10 @@ import { areThereProjectsLogic } from './searchProjectsUtils';
 
 const SearchProjectsForm = () => {
     const projectContext = useContext(ProjectContext);
-    const { projectsData, setProjectsData } = projectContext
+    const { projectsData, setProjectsData, inputValue, setInputValue } = projectContext
 
     const navigate = useNavigate()
 
-    const [inputValue, setInputValue] = useState<string>("")
     const [searchIconNotEnabled, setSearchIconNotEnabled] = useState<boolean>(true)
 
     const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value)
