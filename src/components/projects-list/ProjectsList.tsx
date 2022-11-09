@@ -1,6 +1,6 @@
 // Context
 import { useContext } from "react";
-import { ProjectContext } from "../context/ProjectContext";
+import { ProjectContext } from "../../context/ProjectContext";
 // Mateial UI
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -10,6 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 // React dom
 import { useNavigate } from "react-router-dom";
+import ProjectStatus from "./projectsStatus";
 
 const ProjectsList = () => {
     const projectContext = useContext(ProjectContext);
@@ -81,7 +82,7 @@ const ProjectsList = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small">{ status }</Button>
+                                        <ProjectStatus status={ status } />
                                     </CardActions>
                                 </Card>
                             );

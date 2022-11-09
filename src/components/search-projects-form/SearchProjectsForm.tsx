@@ -9,9 +9,9 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { IconButton } from '@mui/material';
 // Project Data 
-import projectsDataBackend from "../assets/projectsData.json"
+import projectsDataBackend from "../../assets/projectsData.json"
 // Context 
-import { ProjectContext } from '../context/ProjectContext';
+import { ProjectContext } from '../../context/ProjectContext';
 // Utils 
 import { areThereProjectsLogic } from './searchProjectsUtils';
 

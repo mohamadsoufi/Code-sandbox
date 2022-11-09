@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router";
-import SearchProjectsForm from './components/SearchProjectsForm';
+import SearchProjectsForm from './components/search-projects-form/SearchProjectsForm';
 import { ProjectContextProvider } from './context/ProjectContext';
-import ProjectsList from './components/ProjectsList';
+import ProjectsList from './components/projects-list/ProjectsList';
 function App() {
   return (
     <div className="App">
