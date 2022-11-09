@@ -56,7 +56,7 @@ const SearchProjectsForm = () => {
             <Box component="form" onSubmit={ handleSubmit }>
                 <TextField
                     id="input-with-icon-textfield"
-                    label="TextField"
+                    label="Enter a Project"
                     value={ inputValue }
                     onChange={ handleInputValue }
                     InputProps={ {
@@ -68,7 +68,7 @@ const SearchProjectsForm = () => {
                             </InputAdornment>
                         ),
                     } }
-                    variant="standard"
+                    variant="outlined"
                 />
             </Box>
         </Box>
