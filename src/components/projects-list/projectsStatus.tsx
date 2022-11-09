@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 // context
 import { ProjectContext } from "../../context/ProjectContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 // types
 import { Props } from "./projectListTypes";
 import { changeProjectStatusInBackend } from "./projectListUtils";
@@ -20,7 +20,7 @@ const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
         setValue(newValue);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         changeProjectStatusInBackend({ projectsData, projectName, value });
         // })
     }, [projectsData, projectName, value]);
