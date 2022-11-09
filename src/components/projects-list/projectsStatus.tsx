@@ -1,30 +1,40 @@
-// Material UI 
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-// context 
-import { ProjectContext } from '../../context/ProjectContext';
+// Material UI
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+// context
+import { ProjectContext } from "../../context/ProjectContext";
 import { useContext } from "react";
 
 interface Props {
-    status: string
+    status: string;
+    projectName: string
 }
 
-const ColorTabs: React.FC<Props> = ({ status }) => {
+const ColorTabs: React.FC<Props> = ({ status, projectName }) => {
     const [value, setValue] = React.useState(status);
 
     const projectContext = useContext(ProjectContext);
-    const { projectsData, setProjectsData } = projectContext;
+    const { projectsData } = projectContext;
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        console.log(newValue);
-
         setValue(newValue);
     };
 
+    React.useEffect(() => {
+        const changeStatus = projectsData?.map(project => {
+            let { projectName: nameInLoop } = project
+            if (nameInLoop === projectName) {
+                project.status = value
+                return project
+            }
+            return project
+        })
+    }, [projectsData, projectName, value])
+
     return (
-        <Box sx={ { width: '100%' } }>
+        <Box sx={ { width: "100%" } }>
             <Tabs
                 value={ value }
                 onChange={ handleChange }
@@ -38,5 +48,5 @@ const ColorTabs: React.FC<Props> = ({ status }) => {
             </Tabs>
         </Box>
     );
-}
-export default ColorTabs
+};
+export default ColorTabs;

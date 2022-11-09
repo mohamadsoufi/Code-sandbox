@@ -82,7 +82,7 @@ const ProjectsList = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <ProjectStatus status={ status } />
+                                        <ProjectStatus status={ status } projectName={ projectName } />
                                     </CardActions>
                                 </Card>
                             );
