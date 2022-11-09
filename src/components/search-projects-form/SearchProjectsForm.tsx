@@ -5,11 +5,9 @@ import { useState, useContext, useEffect } from "react";
 // Material UI
 import Box from "@mui/material/Box";
 import SearchIcon from "@mui/icons-material/Search";
-import TextField from "@mui/material/TextField";
+import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
 import { IconButton } from "@mui/material";
-// Project Data
-import projectsDataBackend from "../../assets/projectsData.json";
 // Context
 import { ProjectContext } from "../../context/ProjectContext";
 // Utils
@@ -30,8 +28,7 @@ const SearchProjectsForm = () => {
     const [searchIconNotEnabled, setSearchIconNotEnabled] =
         useState<boolean>(true);
 
-    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) =>
-        setInputValue(event.target.value);
+    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
 
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault();
@@ -52,9 +49,25 @@ const SearchProjectsForm = () => {
     }, [projectsData]);
 
     return (
-        <Box>
-            <Box component="form" onSubmit={ handleSubmit }>
+        <Box
+            sx={ {
+                height: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            } }
+            component="form"
+            onSubmit={ handleSubmit }
+        >
+            <Box sx={ {
+                width: "600px", height: "200px", backgroundColor: "#E7F0FF", display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "10px"
+            } }>
                 <TextField
+                    sx={ { width: "400px", lineHeight: "25px" } }
                     id="input-with-icon-textfield"
                     label="Enter a Project"
                     value={ inputValue }
@@ -71,6 +84,7 @@ const SearchProjectsForm = () => {
                     variant="outlined"
                 />
             </Box>
+
         </Box>
     );
 };

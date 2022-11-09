@@ -11,7 +11,7 @@ export default function ButtonAppBar() {
 
     return (
         <Box sx={ { flexGrow: 1 } }>
-            <AppBar position="static">
+            <AppBar sx={ { backgroundColor: "#DC493A" } } position="static">
                 <Toolbar>
                     <IconButton
                         onClick={ () => navigate("/") }
