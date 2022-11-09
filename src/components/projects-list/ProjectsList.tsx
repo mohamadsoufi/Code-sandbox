@@ -14,7 +14,7 @@ import ProjectStatus from "./projectsStatus";
 
 const ProjectsList = () => {
     const projectContext = useContext(ProjectContext);
-    const { projectsData, setProjectsData } = projectContext;
+    const { projectsData } = projectContext;
 
     const navigate = useNavigate();
 

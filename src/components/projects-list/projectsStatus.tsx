@@ -6,13 +6,11 @@ import Box from "@mui/material/Box";
 // context
 import { ProjectContext } from "../../context/ProjectContext";
 import { useContext } from "react";
+// types
+import { Props } from "./projectListTypes";
+import { changeProjectStatusInBackend } from "./projectListUtils";
 
-interface Props {
-    status: string;
-    projectName: string
-}
-
-const ColorTabs: React.FC<Props> = ({ status, projectName }) => {
+const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
     const [value, setValue] = React.useState(status);
 
     const projectContext = useContext(ProjectContext);
@@ -23,15 +21,9 @@ const ColorTabs: React.FC<Props> = ({ status, projectName }) => {
     };
 
     React.useEffect(() => {
-        const changeStatus = projectsData?.map(project => {
-            let { projectName: nameInLoop } = project
-            if (nameInLoop === projectName) {
-                project.status = value
-                return project
-            }
-            return project
-        })
-    }, [projectsData, projectName, value])
+        changeProjectStatusInBackend({ projectsData, projectName, value });
+        // })
+    }, [projectsData, projectName, value]);
 
     return (
         <Box sx={ { width: "100%" } }>
@@ -49,4 +41,4 @@ const ColorTabs: React.FC<Props> = ({ status, projectName }) => {
         </Box>
     );
 };
-export default ColorTabs;
+export default ProjectStatus;
