@@ -1,3 +1,4 @@
+// This component still requires styling 
 // React stuff 
 import { useNavigate } from 'react-router-dom';
 import { useState, useContext, useEffect } from "react";
@@ -11,7 +12,7 @@ import { IconButton } from '@mui/material';
 import projectsDataBackend from "../assets/projectsData.json"
 // Context 
 import { ProjectContext } from '../context/ProjectContext';
-import { ProjectDataTypes } from '../context/ProjectContextTypes';
+// Utils 
 import { areThereProjectsLogic } from './searchProjectsUtils';
 
 
@@ -32,10 +33,9 @@ const SearchProjectsForm = () => {
     }
 
     useEffect(() => {
+        // This function handles wether we have a match from the projects after the user enters 3 letters 
         areThereProjectsLogic({ inputValue, projectsDataBackend, setProjectsData })
     }, [inputValue, setProjectsData])
-
-
 
     useEffect(() => {
         projectsData ? setSearchIconNotEnabled(false) : setSearchIconNotEnabled(true)
