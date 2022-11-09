@@ -1,9 +1,13 @@
+// Css 
 import './App.css';
+// React router 
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router";
-import SearchProjectsForm from './components/SearchProjectsForm';
+// Components 
+import SearchProjectsForm from './components/search-projects-form/SearchProjectsForm';
+import ProjectsList from './components/projects-list/ProjectsList';
+// Context 
 import { ProjectContextProvider } from './context/ProjectContext';
-import ProjectsList from './components/ProjectsList';
 function App() {
   return (
     <div className="App">
