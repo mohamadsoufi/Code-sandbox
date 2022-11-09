@@ -18,23 +18,22 @@ import { areThereProjectsLogic } from './searchProjectsUtils';
 
 const SearchProjectsForm = () => {
     const projectContext = useContext(ProjectContext);
-    const { projectsData, setProjectsData } = projectContext
+    const { projectsData, setProjectsData, inputValue, setInputValue } = projectContext
 
     const navigate = useNavigate()
 
-    const [inputValue, setInputValue] = useState<string>("")
     const [searchIconNotEnabled, setSearchIconNotEnabled] = useState<boolean>(true)
 
     const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value)
 
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault()
-        projectsData?.length !== 0 ? navigate("/projects-list") : alert("Sorry there is no match")
+        projectsData?.length !== 0 ? navigate("/projects") : alert("Sorry there is no match")
     }
 
     useEffect(() => {
         // This function handles wether we have a match from the projects after the user enters 3 letters 
-        areThereProjectsLogic({ inputValue, projectsDataBackend, setProjectsData })
+        areThereProjectsLogic({ inputValue, setProjectsData, projectsDataBackend })
     }, [inputValue, setProjectsData])
 
     useEffect(() => {
