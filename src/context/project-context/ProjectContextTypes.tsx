@@ -13,7 +13,6 @@ export type ProjectsTypes = {
     inputValue: string;
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
     dataFromBackend: ProjectDataTypes[];
-    setDataFromBackend: React.Dispatch<React.SetStateAction<ProjectDataTypes[]>>;
 };
 
 export type ProjectsDataChildren = {

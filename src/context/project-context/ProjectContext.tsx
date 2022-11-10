@@ -27,7 +27,6 @@ export const ProjectContextProvider = ({ children }: ProjectsDataChildren) => {
                 inputValue,
                 setInputValue,
                 dataFromBackend,
-                setDataFromBackend,
             } }
         >
             { children }

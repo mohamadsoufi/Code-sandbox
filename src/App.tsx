@@ -9,8 +9,8 @@ import ProjectsList from './components/projects-list/ProjectsList';
 import ButtonAppBar from './components/Header';
 import PageNotFound from './components/PageNotFound';
 // Context 
-import { ProjectContextProvider } from './context/project-context/ProjectContext';
 import { ErrorContextProvider } from './context/errors-context/ErrorsContext';
+import { ProjectContextProvider } from './context/project-context/ProjectContext';
 
 function App() {
   return (

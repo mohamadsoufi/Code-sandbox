@@ -9,8 +9,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { IconButton } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 // Context
-import { ProjectContext } from "../../context/project-context/ProjectContext";
 import { ErrorsContext } from "../../context/errors-context/ErrorsContext";
+import { ProjectContext } from "../../context/project-context/ProjectContext";
 // Utils
 import { selectAvailableProjects } from "./utils/searchProjectsUtils";
 // Styles 
@@ -19,20 +19,20 @@ import { formContainer, inputContainer } from "./searchProjectsStyles";
 import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
 
 const SearchProjectsForm = () => {
-    const phones = useMediaQuery('(max-width:605px)');
-    const projectContext = useContext(ProjectContext);
+    const mobile = useMediaQuery('(max-width:605px)');
+    const useProjectContext = useContext(ProjectContext);
     const {
         projectsData,
         setProjectsData,
         inputValue,
         setInputValue,
         dataFromBackend,
-    } = projectContext;
+    } = useProjectContext;
 
-    const errorContext = useContext(ErrorsContext);
+    const useErrorContext = useContext(ErrorsContext);
     const {
-        setAvailableProjects
-    } = errorContext;
+        setUnavailableProjects
+    } = useErrorContext;
     const navigate = useNavigate();
 
     const [searchIconNotDisabled, setSearchIconDisabled] = useState<boolean>(true);
@@ -47,7 +47,7 @@ const SearchProjectsForm = () => {
         event.preventDefault();
         projectsData?.length !== 0
             ? navigate("/projects")
-            : setAvailableProjects(true)
+            : setUnavailableProjects(true)
     };
 
     useEffect(() => {
@@ -67,9 +67,9 @@ const SearchProjectsForm = () => {
             component="form"
             onSubmit={ handleSubmit }
         >
-            <Box sx={ phones ? { ...inputContainer, width: "100%" } : inputContainer }>
+            <Box sx={ mobile ? { ...inputContainer, width: "100%" } : inputContainer }>
                 <TextField
-                    sx={ phones ? { width: "68%" } : { width: "400px" } }
+                    sx={ mobile ? { width: "68%" } : { width: "400px" } }
                     label="Enter a Project"
                     value={ inputValue }
                     onChange={ handleInputValue }

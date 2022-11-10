@@ -8,19 +8,18 @@ import { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../../context/project-context/ProjectContext";
 // types
 import { Props } from "./projectListTypes";
-import { changeProjectStatusInBackend } from "./utils/projectListUtils";
+import { updateProjectStatus } from "./utils/projectListUtils";
 
 const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
     const [value, setValue] = useState(status);
 
-    const projectContext = useContext(ProjectContext);
-    const { projectsData } = projectContext;
+    const useProjectContext = useContext(ProjectContext);
+    const { projectsData } = useProjectContext;
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => setValue(newValue);
 
     useEffect(() => {
-        changeProjectStatusInBackend({ projectsData, projectName, value });
-        // })
+        updateProjectStatus({ projectsData, projectName, value });
     }, [projectsData, projectName, value]);
 
     return (

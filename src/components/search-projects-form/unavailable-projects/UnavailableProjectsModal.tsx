@@ -11,12 +11,12 @@ import { closeModalButton, modalContainer } from "./styles";
 
 
 const UnavailableProjectsModal = () => {
-    const errorContext = useContext(ErrorsContext);
-    const { availableProjects, handleClose } = errorContext;
+    const useErrorContext = useContext(ErrorsContext);
+    const { unavailableProjects, handleClose } = useErrorContext;
 
     return (
         <div>
-            <Modal open={ availableProjects } onClose={ handleClose }>
+            <Modal sx={ { cursor: "pointer" } } open={ unavailableProjects } onClose={ handleClose }>
                 <Box sx={ modalContainer }>
                     <Typography variant="h6" component="h2">
                         Sorry There are no matches for the projects you entered.
