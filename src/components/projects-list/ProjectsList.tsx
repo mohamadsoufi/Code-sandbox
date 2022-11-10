@@ -9,6 +9,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // React dom
 import { useNavigate } from "react-router-dom";
 import ProjectStatus from "./projectsStatus";
@@ -33,14 +34,14 @@ const ProjectsList = () => {
 
         <Box sx={ projectsContainer }>
             { projectsData?.length !== 0 ? (
-                <Box sx={ phones ? { ...listContainer, padding: "10px 15px" } : listContainer }>
+                <Box sx={ phones ? { ...listContainer, padding: "10px 5px" } : listContainer }>
                     <Button
                         onClick={ () => navigate("/") }
                         sx={ goBackButton }
-                        size="small"
+                        size={ phones ? "small" : "medium" }
                         variant="contained"
                     >
-                        Go back
+                        <ArrowBackIcon />
                     </Button>
                     { projectsData?.map((project) => {
                         const { id, projectName, description, status } = project;

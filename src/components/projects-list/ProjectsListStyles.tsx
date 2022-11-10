@@ -20,7 +20,7 @@ export const listContainer = {
 };
 
 export const projectCard = {
-    width: "355px",
+    width: "340px",
     textAlign: "left",
     marginBottom: "10px",
     minHeight: "150px"
