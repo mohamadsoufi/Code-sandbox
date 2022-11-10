@@ -14,7 +14,7 @@ import { ProjectContext } from "../../context/project-context/ProjectContext";
 import { areThereProjectsLogic } from "./searchProjectsUtils";
 // Styles 
 import { formContainer, inputContainer } from "./searchProjectsStyles";
-import NoProjectsModal from "./NoProjectsModal";
+import UnavailableProjectsModal from "./NoProjectsModal";
 
 const SearchProjectsForm = () => {
     const phones = useMediaQuery('(max-width:605px)');
@@ -76,7 +76,7 @@ const SearchProjectsForm = () => {
                     variant="outlined"
                 />
             </Box>
-            <NoProjectsModal />
+            <UnavailableProjectsModal />
         </Box>
     );
 };

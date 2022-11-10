@@ -19,14 +19,18 @@ const style = {
     p: 4,
 };
 
-const NoProjectsModal = () => {
+const UnavailableProjectsModal = () => {
     const errorContext = useContext(ErrorsContext);
-    const { openNoProjectModal, handleOpen, handleClose } = errorContext;
+    const {
+        availableProjects,
+        handleOpen,
+        handleClose
+    } = errorContext;
 
     return (
         <div>
             <Modal
-                open={ openNoProjectModal }
+                open={ availableProjects }
                 onClose={ handleClose }
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
@@ -43,4 +47,4 @@ const NoProjectsModal = () => {
         </div>
     );
 };
-export default NoProjectsModal;
+export default UnavailableProjectsModal;

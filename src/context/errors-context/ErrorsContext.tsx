@@ -6,16 +6,16 @@ import { ErrorsContextChildren, ErrorsTypes } from "./ErrorsTypes";
 export const ErrorsContext = createContext({} as ErrorsTypes);
 
 export const ErrorContextProvider = ({ children }: ErrorsContextChildren) => {
-    const [openNoProjectModal, setOpenNoProjectModal] = useState<boolean>(false);
+    const [availableProjects, setAvailableProjects] = useState<boolean>(false);
 
-    const handleOpen = () => setOpenNoProjectModal(true);
-    const handleClose = () => setOpenNoProjectModal(false);
+    const handleOpen = () => setAvailableProjects(true);
+    const handleClose = () => setAvailableProjects(false);
 
     return (
         <ErrorsContext.Provider
             value={ {
-                openNoProjectModal,
-                setOpenNoProjectModal,
+                availableProjects,
+                setAvailableProjects,
                 handleOpen,
                 handleClose
             } }
