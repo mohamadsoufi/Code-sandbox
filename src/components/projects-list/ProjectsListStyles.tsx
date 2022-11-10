@@ -1,3 +1,5 @@
+import { MANA_TEA } from "../../colors/colors";
+
 export const projectsContainer = {
     height: "100vh",
     width: "100%",
@@ -12,7 +14,7 @@ export const listContainer = {
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "#E7F0FF",
+    backgroundColor: MANA_TEA,
     padding: "36px 36px",
     maxHeight: "650px",
     overflow: "auto",

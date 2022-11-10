@@ -1,7 +1,7 @@
 // Context
 import { useContext, useEffect } from "react";
-import { ProjectContext } from "../../context/ProjectContext";
-// Mateial UI
+import { ProjectContext } from "../../context/project-context/ProjectContext";
+// Material UI
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -12,7 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // React dom
 import { useNavigate } from "react-router-dom";
-import ProjectStatus from "./projectsStatus";
+import ProjectStatus from "./ProjectsStatus";
 // Styles 
 import {
     goBackButton,

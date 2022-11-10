@@ -1,11 +1,11 @@
 // Types 
-import { changeStatusInBackendTypes } from "./projectListTypes";
+import { ChangeStatusInBackendTypes } from "../projectListTypes";
 
 export const changeProjectStatusInBackend = ({
     projectsData,
     projectName,
     value,
-}: changeStatusInBackendTypes) => {
+}: ChangeStatusInBackendTypes) => {
     projectsData?.map((project) => {
         let { projectName: nameInLoop } = project;
         if (nameInLoop === projectName) {

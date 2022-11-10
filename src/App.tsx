@@ -7,21 +7,26 @@ import { Routes } from "react-router";
 import SearchProjectsForm from './components/search-projects-form/SearchProjectsForm';
 import ProjectsList from './components/projects-list/ProjectsList';
 import ButtonAppBar from './components/Header';
+import PageNotFound from './components/PageNotFound';
 // Context 
-import { ProjectContextProvider } from './context/ProjectContext';
+import { ProjectContextProvider } from './context/project-context/ProjectContext';
+import { ErrorContextProvider } from './context/errors-context/ErrorsContext';
 
 function App() {
   return (
     <div className="App">
-      <ProjectContextProvider>
-        <BrowserRouter>
-          <ButtonAppBar />
-          <Routes>
-            <Route path="/" element={ <SearchProjectsForm /> } />
-            <Route path="/projects" element={ <ProjectsList /> } />
-          </Routes>
-        </BrowserRouter>
-      </ProjectContextProvider>
+      <ErrorContextProvider>
+        <ProjectContextProvider>
+          <BrowserRouter>
+            <ButtonAppBar />
+            <Routes>
+              <Route path="/" element={ <SearchProjectsForm /> } />
+              <Route path="/projects" element={ <ProjectsList /> } />
+              <Route path="*" element={ <PageNotFound /> } />
+            </Routes>
+          </BrowserRouter>
+        </ProjectContextProvider>
+      </ErrorContextProvider>
     </div>
   );
 }

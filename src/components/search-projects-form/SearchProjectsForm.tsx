@@ -9,11 +9,14 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { IconButton } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 // Context
-import { ProjectContext } from "../../context/ProjectContext";
+import { ProjectContext } from "../../context/project-context/ProjectContext";
+import { ErrorsContext } from "../../context/errors-context/ErrorsContext";
 // Utils
-import { areThereProjectsLogic } from "./searchProjectsUtils";
+import { selectAvailableProjects } from "./utils/searchProjectsUtils";
 // Styles 
 import { formContainer, inputContainer } from "./searchProjectsStyles";
+// Component 
+import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
 
 const SearchProjectsForm = () => {
     const phones = useMediaQuery('(max-width:605px)');
@@ -26,23 +29,30 @@ const SearchProjectsForm = () => {
         dataFromBackend,
     } = projectContext;
 
+    const errorContext = useContext(ErrorsContext);
+    const {
+        setAvailableProjects
+    } = errorContext;
     const navigate = useNavigate();
 
-    const [searchIconNotDisabled, setSearchIconDisabled] =
-        useState<boolean>(true);
+    const [searchIconNotDisabled, setSearchIconDisabled] = useState<boolean>(true);
 
-    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
+
+    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target
+        setInputValue(value);
+    }
 
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault();
         projectsData?.length !== 0
             ? navigate("/projects")
-            : alert("Sorry there is no match");
+            : setAvailableProjects(true)
     };
 
     useEffect(() => {
         // This function handles wether we have a match from the projects after the user enters 3 letters
-        areThereProjectsLogic({ inputValue, setProjectsData, dataFromBackend });
+        selectAvailableProjects({ inputValue, setProjectsData, dataFromBackend });
     }, [inputValue, setProjectsData, dataFromBackend]);
 
     useEffect(() => {
@@ -75,7 +85,7 @@ const SearchProjectsForm = () => {
                     variant="outlined"
                 />
             </Box>
-
+            <UnavailableProjectsModal />
         </Box>
     );
 };
