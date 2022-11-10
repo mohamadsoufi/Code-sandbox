@@ -7,6 +7,7 @@ import { Routes } from "react-router";
 import SearchProjectsForm from './components/search-projects-form/SearchProjectsForm';
 import ProjectsList from './components/projects-list/ProjectsList';
 import ButtonAppBar from './components/Header';
+import PageNotFound from './components/PageNotFound';
 // Context 
 import { ProjectContextProvider } from './context/project-context/ProjectContext';
 import { ErrorContextProvider } from './context/errors-context/ErrorsContext';
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={ <SearchProjectsForm /> } />
               <Route path="/projects" element={ <ProjectsList /> } />
+              <Route path="*" element={ <PageNotFound /> } />
             </Routes>
           </BrowserRouter>
         </ProjectContextProvider>

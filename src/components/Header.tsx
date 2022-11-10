@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 // Router 
 import { useNavigate } from 'react-router-dom';
 // Colors 
-import { TEA_GREEN } from '../colors/colors';
+import { BLACK, TEA_GREEN } from '../colors/colors';
 
 export default function ButtonAppBar() {
     const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
             <AppBar sx={ { backgroundColor: TEA_GREEN } } position="static">
                 <Toolbar sx={ navigationItems }>
                     <Typography
-                        sx={ { color: "black" } }
+                        sx={ { color: BLACK } }
                         variant="h6">
                         goodcarbon
                     </Typography>
@@ -28,7 +28,7 @@ export default function ButtonAppBar() {
                         size="small"
                         edge="start"
                         color="inherit"
-                        sx={ { color: "black" } }
+                        sx={ { color: BLACK } }
                     >
                         Search Projects
                     </IconButton>
