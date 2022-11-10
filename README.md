@@ -27,6 +27,5 @@ Search for Nature-based soluctions projects to help restore nature across the fo
 
 ## Some screenshots
 
-[goodcarbon (2)](https://user-images.githubusercontent.com/17381734/201226104-f6dcd6f0-90ce-438e-83f4-5b11a423dcda.png)
-lic/Weather-app.png)
-![weather2](https://github.com/Ameer-Alaswad/Weather-app/blob/main/public/Weather-app%20(3).png)
+![goodcarbon (2)](https://user-images.githubusercontent.com/17381734/201226290-85b8721a-90f0-4d27-afe2-77aca229eed0.png)
+
