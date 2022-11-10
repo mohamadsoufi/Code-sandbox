@@ -67,7 +67,7 @@ const SearchProjectsForm = () => {
                         endAdornment: (
                             <InputAdornment position="start">
                                 <IconButton type="submit" disabled={ searchIconNotDisabled }>
-                                    <SearchIcon />
+                                    <SearchIcon color={ searchIconNotDisabled ? "disabled" : "primary" } />
                                 </IconButton>
                             </InputAdornment>
                         ),
