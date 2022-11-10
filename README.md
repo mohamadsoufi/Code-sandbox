@@ -1,37 +1,31 @@
-# Foobar
+## About the project
 
-Foobar is a Python library for dealing with word pluralization.
+# goodcarbon search App.
+
+Search for Nature based soluctions projects to help restore nature across the forest.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+`To get the project up and running, and view components in the browser, complete the following steps:`
 
-```bash
-pip install foobar
-```
+1- Clone this repo
 
-## Usage
+2- Install project dependancies: `npm install`
 
-```python
-import foobar
+3- Start the development environment: npm start
 
-# returns 'words'
-foobar.pluralize('word')
+4- Open your browser and visit http://localhost:3000
 
-# returns 'geese'
-foobar.pluralize('goose')
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+## Technologies
 
-## Contributing
+- HTML
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+- CSS : Material UI
 
-Please make sure to update tests as appropriate.
+- Typescript : React JS.
 
-## License
+## Some screenshots
 
-[MIT](https://choosealicense.com/licenses/mit/)
+![weather1](https://github.com/Ameer-Alaswad/Weather-app/blob/main/public/Weather-app.png)
+![weather2](https://github.com/Ameer-Alaswad/Weather-app/blob/main/public/Weather-app%20(3).png)
