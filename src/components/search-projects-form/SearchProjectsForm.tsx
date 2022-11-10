@@ -1,4 +1,3 @@
-// This component still requires styling
 // React stuff
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
@@ -12,6 +11,8 @@ import { IconButton } from "@mui/material";
 import { ProjectContext } from "../../context/ProjectContext";
 // Utils
 import { areThereProjectsLogic } from "./searchProjectsUtils";
+// Styles 
+import { formContainer, inputContainer } from "./searchProjectsStyles";
 
 const SearchProjectsForm = () => {
     const projectContext = useContext(ProjectContext);
@@ -25,7 +26,7 @@ const SearchProjectsForm = () => {
 
     const navigate = useNavigate();
 
-    const [searchIconNotEnabled, setSearchIconNotEnabled] =
+    const [searchIconNotDisabled, setSearchIconDisabled] =
         useState<boolean>(true);
 
     const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
@@ -44,38 +45,26 @@ const SearchProjectsForm = () => {
 
     useEffect(() => {
         projectsData
-            ? setSearchIconNotEnabled(false)
-            : setSearchIconNotEnabled(true);
+            ? setSearchIconDisabled(false)
+            : setSearchIconDisabled(true);
     }, [projectsData]);
 
     return (
         <Box
-            sx={ {
-                height: "100vh",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            } }
+            sx={ formContainer }
             component="form"
             onSubmit={ handleSubmit }
         >
-            <Box sx={ {
-                width: "600px", height: "200px", backgroundColor: "#E7F0FF", display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "10px"
-            } }>
+            <Box sx={ inputContainer }>
                 <TextField
-                    sx={ { width: "400px", lineHeight: "25px" } }
-                    id="input-with-icon-textfield"
+                    sx={ { width: "400px" } }
                     label="Enter a Project"
                     value={ inputValue }
                     onChange={ handleInputValue }
                     InputProps={ {
                         endAdornment: (
                             <InputAdornment position="start">
-                                <IconButton type="submit" disabled={ searchIconNotEnabled }>
+                                <IconButton type="submit" disabled={ searchIconNotDisabled }>
                                     <SearchIcon />
                                 </IconButton>
                             </InputAdornment>
