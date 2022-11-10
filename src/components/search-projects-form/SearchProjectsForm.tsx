@@ -12,9 +12,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { ProjectContext } from "../../context/project-context/ProjectContext";
 import { ErrorsContext } from "../../context/errors-context/ErrorsContext";
 // Utils
-import { areThereProjectsLogic } from "./searchProjectsUtils";
+import { selectAvailableProjects } from "./utils/searchProjectsUtils";
 // Styles 
 import { formContainer, inputContainer } from "./searchProjectsStyles";
+// Component 
 import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
 
 const SearchProjectsForm = () => {
@@ -37,7 +38,10 @@ const SearchProjectsForm = () => {
     const [searchIconNotDisabled, setSearchIconDisabled] = useState<boolean>(true);
 
 
-    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
+    const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target
+        setInputValue(value);
+    }
 
     const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
         event.preventDefault();
@@ -48,7 +52,7 @@ const SearchProjectsForm = () => {
 
     useEffect(() => {
         // This function handles wether we have a match from the projects after the user enters 3 letters
-        areThereProjectsLogic({ inputValue, setProjectsData, dataFromBackend });
+        selectAvailableProjects({ inputValue, setProjectsData, dataFromBackend });
     }, [inputValue, setProjectsData, dataFromBackend]);
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import { ProjectDataTypes } from "../../context/project-context/ProjectContextTypes";
+import { ProjectDataTypes } from "../../../context/project-context/ProjectContextTypes";
 
 export type AreThereProjectsLogic = {
     inputValue: string;
@@ -8,7 +8,7 @@ export type AreThereProjectsLogic = {
     >;
 };
 
-export const areThereProjectsLogic = ({
+export const selectAvailableProjects = ({
     inputValue,
     dataFromBackend,
     setProjectsData,

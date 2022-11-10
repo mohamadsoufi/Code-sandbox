@@ -1,3 +1,5 @@
+import { COTTON_BOLL } from "../../colors/colors";
+
 export const formContainer = {
     height: "100vh",
     display: "flex",
@@ -7,7 +9,7 @@ export const formContainer = {
 export const inputContainer = {
     width: "600px",
     height: "200px",
-    backgroundColor: "#E7F0FF",
+    backgroundColor: COTTON_BOLL,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

@@ -1,31 +1,37 @@
-import * as React from 'react';
+// Material UI 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+// Router 
 import { useNavigate } from 'react-router-dom';
+// Colors 
+import { TEA_GREEN } from '../colors/colors';
 
 export default function ButtonAppBar() {
     const navigate = useNavigate()
 
+    const navigationItems = { display: "flex", justifyContent: "space-between" }
+
     return (
         <Box sx={ { flexGrow: 1 } }>
-            <AppBar sx={ { backgroundColor: "#DC493A" } } position="static">
-                <Toolbar>
+            <AppBar sx={ { backgroundColor: TEA_GREEN } } position="static">
+                <Toolbar sx={ navigationItems }>
+                    <Typography
+                        sx={ { color: "black" } }
+                        variant="h6">
+                        goodcarbon
+                    </Typography>
                     <IconButton
                         onClick={ () => navigate("/") }
                         size="small"
                         edge="start"
                         color="inherit"
-                        aria-label="menu"
-                        sx={ { mr: 2 } }
+                        sx={ { color: "black" } }
                     >
                         Search Projects
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={ { flexGrow: 1 } }>
-                        goodcarbon
-                    </Typography>
                 </Toolbar>
             </AppBar>
         </Box>

@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../../context/project-context/ProjectContext";
 // types
 import { Props } from "./projectListTypes";
-import { changeProjectStatusInBackend } from "./projectListUtils";
+import { changeProjectStatusInBackend } from "./utils/projectListUtils";
 
 const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
     const [value, setValue] = useState(status);
@@ -30,7 +30,6 @@ const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
                 onChange={ handleChange }
                 textColor="secondary"
                 indicatorColor="secondary"
-                aria-label="secondary tabs example"
             >
                 <Tab value="created" label="Created" />
                 <Tab value="approved" label="Approved" />

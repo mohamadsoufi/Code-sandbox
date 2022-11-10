@@ -5,7 +5,7 @@ export interface Props {
     status: string;
     projectName: string
 }
-export type changeStatusInBackendTypes = {
+export type ChangeStatusInBackendTypes = {
     projectsData: ProjectDataTypes[] | null
     projectName: string
     value: string
