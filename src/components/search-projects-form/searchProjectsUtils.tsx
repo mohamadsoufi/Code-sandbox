@@ -1,4 +1,4 @@
-import { ProjectDataTypes } from "../../context/ProjectContextTypes";
+import { ProjectDataTypes } from "../../context/project-context/ProjectContextTypes";
 
 export type AreThereProjectsLogic = {
     inputValue: string;

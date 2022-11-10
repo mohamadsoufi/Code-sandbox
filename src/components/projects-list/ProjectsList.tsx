@@ -1,6 +1,6 @@
 // Context
 import { useContext, useEffect } from "react";
-import { ProjectContext } from "../../context/ProjectContext";
+import { ProjectContext } from "../../context/project-context/ProjectContext";
 // Mateial UI
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";

@@ -1,5 +1,5 @@
 // Types 
-import { ProjectDataTypes } from "../../context/ProjectContextTypes"
+import { ProjectDataTypes } from "../../context/project-context/ProjectContextTypes"
 
 export interface Props {
     status: string;

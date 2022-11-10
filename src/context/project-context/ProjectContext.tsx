@@ -5,9 +5,9 @@ import {
     ProjectDataTypes,
     ProjectsTypes,
     ProjectsDataChildren,
-} from "./ProjectContextTypes";
+} from "./ProjectContextTypes"
 // data
-import projectsDataBackend from "../assets/projectsData.json";
+import projectsDataBackend from "../../assets/projectsData.json";
 
 export const ProjectContext = createContext({} as ProjectsTypes);
 

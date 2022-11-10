@@ -9,11 +9,12 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { IconButton } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 // Context
-import { ProjectContext } from "../../context/ProjectContext";
+import { ProjectContext } from "../../context/project-context/ProjectContext";
 // Utils
 import { areThereProjectsLogic } from "./searchProjectsUtils";
 // Styles 
 import { formContainer, inputContainer } from "./searchProjectsStyles";
+import NoProjectsModal from "./NoProjectsModal";
 
 const SearchProjectsForm = () => {
     const phones = useMediaQuery('(max-width:605px)');
@@ -28,8 +29,8 @@ const SearchProjectsForm = () => {
 
     const navigate = useNavigate();
 
-    const [searchIconNotDisabled, setSearchIconDisabled] =
-        useState<boolean>(true);
+    const [searchIconNotDisabled, setSearchIconDisabled] = useState<boolean>(true);
+
 
     const handleInputValue = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
 
@@ -75,7 +76,7 @@ const SearchProjectsForm = () => {
                     variant="outlined"
                 />
             </Box>
-
+            <NoProjectsModal />
         </Box>
     );
 };

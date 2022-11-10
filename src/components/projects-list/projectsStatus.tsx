@@ -4,8 +4,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 // context
-import { ProjectContext } from "../../context/ProjectContext";
 import { useContext, useEffect, useState } from "react";
+import { ProjectContext } from "../../context/project-context/ProjectContext";
 // types
 import { Props } from "./projectListTypes";
 import { changeProjectStatusInBackend } from "./projectListUtils";
