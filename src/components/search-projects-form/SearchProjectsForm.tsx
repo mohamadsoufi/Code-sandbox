@@ -10,11 +10,12 @@ import { IconButton } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
 // Context
 import { ProjectContext } from "../../context/project-context/ProjectContext";
+import { ErrorsContext } from "../../context/errors-context/ErrorsContext";
 // Utils
 import { areThereProjectsLogic } from "./searchProjectsUtils";
 // Styles 
 import { formContainer, inputContainer } from "./searchProjectsStyles";
-import UnavailableProjectsModal from "./NoProjectsModal";
+import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
 
 const SearchProjectsForm = () => {
     const phones = useMediaQuery('(max-width:605px)');
@@ -27,6 +28,10 @@ const SearchProjectsForm = () => {
         dataFromBackend,
     } = projectContext;
 
+    const errorContext = useContext(ErrorsContext);
+    const {
+        setAvailableProjects
+    } = errorContext;
     const navigate = useNavigate();
 
     const [searchIconNotDisabled, setSearchIconDisabled] = useState<boolean>(true);
@@ -38,7 +43,7 @@ const SearchProjectsForm = () => {
         event.preventDefault();
         projectsData?.length !== 0
             ? navigate("/projects")
-            : alert("Sorry there is no match");
+            : setAvailableProjects(true)
     };
 
     useEffect(() => {
