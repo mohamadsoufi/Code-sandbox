@@ -1,5 +1,5 @@
 // Context
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProjectContext } from "../../context/ProjectContext";
 // Mateial UI
 import Box from "@mui/material/Box";
@@ -29,6 +29,10 @@ const ProjectsList = () => {
     const { projectsData } = projectContext;
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (projectsData === null || projectsData.length === 0) navigate("/")
+    }, [projectsData, navigate])
 
     return (
 
