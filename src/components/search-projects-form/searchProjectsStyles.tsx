@@ -3,11 +3,14 @@ export const formContainer = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-}
+};
 export const inputContainer = {
-    width: "600px", height: "200px", backgroundColor: "#E7F0FF", display: "flex",
+    width: "600px",
+    height: "200px",
+    backgroundColor: "#E7F0FF",
+    display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "10px"
-}
+    borderRadius: "10px",
+};

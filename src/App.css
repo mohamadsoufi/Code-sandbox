@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  height: 100vh;
   background-color: #ECE8EF
 }
 
@@ -38,4 +37,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #6b666b #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 19px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6b666b;
+  border-radius: 5px;
+  border: 3px solid #ffffff;
 }
