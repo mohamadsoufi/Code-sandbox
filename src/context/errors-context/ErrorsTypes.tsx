@@ -3,8 +3,7 @@ export type ErrorsContextChildren = {
 };
 
 export type ErrorsTypes = {
-    availableProjects: boolean;
-    setAvailableProjects: React.Dispatch<React.SetStateAction<boolean>>;
-    handleOpen: () => void;
+    unavailableProjects: boolean;
+    setUnavailableProjects: React.Dispatch<React.SetStateAction<boolean>>;
     handleClose: () => void;
 } 

@@ -23,10 +23,10 @@ import {
 } from "./ProjectsListStyles";
 
 const ProjectsList = () => {
-    const phones = useMediaQuery('(max-width:426px)');
+    const mobile = useMediaQuery('(max-width:426px)');
 
-    const projectContext = useContext(ProjectContext);
-    const { projectsData } = projectContext;
+    const useProjectContext = useContext(ProjectContext);
+    const { projectsData } = useProjectContext;
 
     const navigate = useNavigate();
 
@@ -38,11 +38,11 @@ const ProjectsList = () => {
 
         <Box sx={ projectsContainer }>
             { projectsData?.length !== 0 ? (
-                <Box sx={ phones ? { ...listContainer, padding: "10px 5px" } : listContainer }>
+                <Box sx={ mobile ? { ...listContainer, padding: "10px 5px" } : listContainer }>
                     <Button
                         onClick={ () => navigate("/") }
                         sx={ goBackButton }
-                        size={ phones ? "small" : "medium" }
+                        size={ mobile ? "small" : "medium" }
                         variant="contained"
                     >
                         <ArrowBackIcon />

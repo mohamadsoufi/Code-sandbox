@@ -1,6 +1,6 @@
 import { ProjectDataTypes } from "../../../context/project-context/ProjectContextTypes";
 
-export type AreThereProjectsLogic = {
+export type SelectAvailableProjects = {
     inputValue: string;
     dataFromBackend: ProjectDataTypes[];
     setProjectsData: React.Dispatch<
@@ -12,7 +12,7 @@ export const selectAvailableProjects = ({
     inputValue,
     dataFromBackend,
     setProjectsData,
-}: AreThereProjectsLogic) => {
+}: SelectAvailableProjects) => {
     if (inputValue.length >= 3) {
         const data: ProjectDataTypes[] | null = dataFromBackend?.filter(
             (project) => {

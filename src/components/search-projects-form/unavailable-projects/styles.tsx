@@ -10,5 +10,6 @@ export const modalContainer = {
     p: 4,
     display: "flex",
     flexDirection: "column",
+    cursor: "default"
 };
 export const closeModalButton = { width: "100px", alignSelf: "center" };
