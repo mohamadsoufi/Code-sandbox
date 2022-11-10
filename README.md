@@ -2,7 +2,7 @@
 
 # goodcarbon search App.
 
-Search for Nature based soluctions projects to help restore nature across the forest.
+Search for Nature-based soluctions projects to help restore nature across the forest.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Search for Nature based soluctions projects to help restore nature across the fo
 
 2- Install project dependancies: `npm install`
 
-3- Start the development environment: npm start
+3- Start the development environment: `npm start`
 
 4- Open your browser and visit http://localhost:3000
 
@@ -27,5 +27,6 @@ Search for Nature based soluctions projects to help restore nature across the fo
 
 ## Some screenshots
 
-![weather1](https://github.com/Ameer-Alaswad/Weather-app/blob/main/public/Weather-app.png)
+[goodcarbon (2)](https://user-images.githubusercontent.com/17381734/201226104-f6dcd6f0-90ce-438e-83f4-5b11a423dcda.png)
+lic/Weather-app.png)
 ![weather2](https://github.com/Ameer-Alaswad/Weather-app/blob/main/public/Weather-app%20(3).png)
