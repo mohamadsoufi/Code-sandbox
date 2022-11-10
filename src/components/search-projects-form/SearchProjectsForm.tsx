@@ -7,6 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
 import { IconButton } from "@mui/material";
+import useMediaQuery from '@mui/material/useMediaQuery';
 // Context
 import { ProjectContext } from "../../context/ProjectContext";
 // Utils
@@ -15,6 +16,7 @@ import { areThereProjectsLogic } from "./searchProjectsUtils";
 import { formContainer, inputContainer } from "./searchProjectsStyles";
 
 const SearchProjectsForm = () => {
+    const phones = useMediaQuery('(max-width:605px)');
     const projectContext = useContext(ProjectContext);
     const {
         projectsData,
@@ -55,9 +57,9 @@ const SearchProjectsForm = () => {
             component="form"
             onSubmit={ handleSubmit }
         >
-            <Box sx={ inputContainer }>
+            <Box sx={ phones ? { ...inputContainer, width: "100%" } : inputContainer }>
                 <TextField
-                    sx={ { width: "400px" } }
+                    sx={ phones ? { width: "68%" } : { width: "400px" } }
                     label="Enter a Project"
                     value={ inputValue }
                     onChange={ handleInputValue }
