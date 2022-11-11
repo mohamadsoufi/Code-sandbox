@@ -25,7 +25,8 @@ Search for Nature-based soluctions projects to help restore nature across the fo
 
 - Typescript : React JS.
 
-## Some screenshots
+## Screenshots
 
+Proceeding to the projects list page after a projects's name has been entered in this search form.
 ![goodcarbon (2)](https://user-images.githubusercontent.com/17381734/201226290-85b8721a-90f0-4d27-afe2-77aca229eed0.png)
 
