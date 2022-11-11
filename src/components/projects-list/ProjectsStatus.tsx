@@ -7,8 +7,8 @@ import Box from "@mui/material/Box";
 import { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "../../context/project-context/ProjectContext";
 // types
-import { Props } from "./projectListTypes";
-import { updateProjectStatus } from "./utils/projectListUtils";
+import { Props } from "./types";
+import { updateProjectStatus } from "./utils/utils";
 
 const ProjectStatus: React.FC<Props> = ({ status, projectName }) => {
     const [value, setValue] = useState(status);

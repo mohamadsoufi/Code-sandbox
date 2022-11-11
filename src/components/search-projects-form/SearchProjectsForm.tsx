@@ -12,9 +12,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { ErrorsContext } from "../../context/errors-context/ErrorsContext";
 import { ProjectContext } from "../../context/project-context/ProjectContext";
 // Utils
-import { selectAvailableProjects } from "./utils/searchProjectsUtils";
+import { selectAvailableProjects } from "./utils/utils";
 // Styles 
-import { formContainer, inputContainer } from "./searchProjectsStyles";
+import { formContainer, inputContainer } from "./styles";
 // Component 
 import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
 

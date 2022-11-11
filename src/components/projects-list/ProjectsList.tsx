@@ -20,7 +20,7 @@ import {
     projectCard,
     projectsContainer,
 
-} from "./ProjectsListStyles";
+} from "./styles";
 
 const ProjectsList = () => {
     const mobile = useMediaQuery('(max-width:426px)');

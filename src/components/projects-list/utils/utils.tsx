@@ -1,5 +1,5 @@
 // Types 
-import { ChangeStatusInBackendTypes } from "../projectListTypes";
+import { ChangeStatusInBackendTypes } from "../types";
 
 export const updateProjectStatus = ({
     projectsData,
