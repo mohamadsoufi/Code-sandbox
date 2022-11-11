@@ -30,7 +30,7 @@ Search for Nature-based soluctions projects to help restore nature across the fo
 Proceeding to the projects list page after a projects's name has been entered in this search form.
 ![goodcarbon (2)](https://user-images.githubusercontent.com/17381734/201226290-85b8721a-90f0-4d27-afe2-77aca229eed0.png)
 
-When the correct project's name is not being provided an error message would popup.
+When the correct project name is not being provided an error message would pop up.
 ![goodcarbon (3)](https://user-images.githubusercontent.com/17381734/201278162-c42473d2-71bd-4386-8a1a-dd6a27176924.png)
 
 Any existing proejct/s which containing word/s from the search from will be displayed on this page.
