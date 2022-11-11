@@ -1,6 +1,6 @@
 ## About the project
 
-# goodcarbon search App.
+# goodcarbon search app
 
 Search for Nature-based soluctions projects to help restore nature across the forest.
 
