@@ -34,7 +34,7 @@ When the correct project's name is not being provided an error message would pop
 ![goodcarbon (3)](https://user-images.githubusercontent.com/17381734/201278162-c42473d2-71bd-4386-8a1a-dd6a27176924.png)
 
 Any existing proejct/s which containing word/s from the search from will be displayed on this page.
-Each project has a status of created-approved-published which can beacked and changed based on the current state of the project.
+Each project has a status of created-approved-published which can be tracked and changed based on the current state of the project.
 ![goodcarbon (5)](https://user-images.githubusercontent.com/17381734/201280463-3353fb2f-9034-43ea-a5f7-8a93018432ca.png)
 
 
