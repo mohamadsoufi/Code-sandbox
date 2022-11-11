@@ -4,8 +4,8 @@ import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router";
 // Components 
-import SearchProjectsForm from './components/search-projects-form/SearchProjectsForm';
-import ProjectsList from './components/projects-list/ProjectsList';
+import SearchProjectsForm from './components/search-projects-form';
+import ProjectsList from './components/projects-list';
 import ButtonAppBar from './components/Header';
 import PageNotFound from './components/PageNotFound';
 // Context 

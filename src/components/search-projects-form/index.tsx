@@ -16,7 +16,7 @@ import { selectAvailableProjects } from "./utils/utils";
 // Styles 
 import { formContainer, inputContainer } from "./styles";
 // Component 
-import UnavailableProjectsModal from "./unavailable-projects/UnavailableProjectsModal";
+import UnavailableProjectsModal from "./unavailable-projects";
 
 const SearchProjectsForm = () => {
     const mobile = useMediaQuery('(max-width:605px)');
