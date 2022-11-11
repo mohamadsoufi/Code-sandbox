@@ -1,4 +1,4 @@
-import { ProjectDataTypes } from "../../../context/project-context/ProjectContextTypes";
+import { ProjectDataTypes } from "../../../context/project-context/types";
 import { words } from "lodash";
 export type SelectAvailableProjects = {
     inputValue: string;

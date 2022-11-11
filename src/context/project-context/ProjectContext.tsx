@@ -5,7 +5,7 @@ import {
     ProjectDataTypes,
     ProjectsTypes,
     ProjectsDataChildren,
-} from "./ProjectContextTypes"
+} from "./types"
 // data
 import projectsDataBackend from "../../assets/projectsData.json";
 

@@ -1,7 +1,7 @@
 // React stuff
 import { createContext, useState } from "react";
 // Types
-import { ErrorsContextChildren, ErrorsTypes } from "./ErrorsTypes";
+import { ErrorsContextChildren, ErrorsTypes } from "./types";
 
 export const ErrorsContext = createContext({} as ErrorsTypes);
 
