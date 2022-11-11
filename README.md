@@ -33,4 +33,8 @@ Proceeding to the projects list page after a projects's name has been entered in
 When the correct project's name is not being provided an error message would popup.
 ![goodcarbon (3)](https://user-images.githubusercontent.com/17381734/201278162-c42473d2-71bd-4386-8a1a-dd6a27176924.png)
 
+Any existing proejct/s which containing word/s from the serch from will be displayed on this page.
+![goodcarbon (3)](https://user-images.githubusercontent.com/17381734/201279483-91bfa21d-eab2-4d7a-8b66-e0781c274cde.png)
+
+
 
